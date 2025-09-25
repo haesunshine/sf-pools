@@ -157,13 +157,38 @@ async function processPool(browser, pool) {
   try {
     console.log(`🌐 Processing ${pool.name}: ${pool.url}`);
 
-    // Navigate to the .pub file URL
-    await page.goto(pool.url, { waitUntil: 'networkidle' });
+    // Set up download handling
+    const downloadPath = './temp-downloads';
+    await page.setViewportSize({ width: 1200, height: 800 });
 
-    // Wait for the .pub file to load and be processed by browser
-    await page.waitForTimeout(10000);
+    // Try to navigate - if it's a direct file, this will fail gracefully
+    try {
+      await page.goto(pool.url, { waitUntil: 'load', timeout: 10000 });
 
-    // Take screenshot
+      // If we get here, it's likely not a direct download
+      await page.waitForTimeout(5000);
+
+      // Take screenshot
+      const screenshot = await page.screenshot({
+        fullPage: true,
+        type: 'png'
+      });
+    } catch (error) {
+      if (error.message.includes('Download is starting')) {
+        console.log(`📄 ${pool.name}: File triggers download - using placeholder data`);
+
+        // For now, return placeholder data - in production you'd handle the downloaded file
+        return {
+          poolName: pool.name,
+          sessions: [], // Empty sessions for now
+          lastUpdated: new Date().toISOString(),
+          source: 'SF Parks .pub file',
+          error: 'File download detected - manual processing required'
+        };
+      }
+      throw error;
+    }
+
     const screenshot = await page.screenshot({
       fullPage: true,
       type: 'png'
