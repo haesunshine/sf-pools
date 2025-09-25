@@ -50,10 +50,10 @@ const WeeklyCalendar: React.FC = () => {
 
     loadData()
   }, [])
-  // Generate time slots every 30 minutes from 6:00 AM to 10:00 PM
+  // Generate time slots every 30 minutes from 8:00 AM to 10:00 PM
   const timeSlots = useMemo(() => {
     const slots = []
-    for (let hour = 6; hour <= 22; hour++) {
+    for (let hour = 8; hour <= 22; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
         const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
         slots.push(time)
