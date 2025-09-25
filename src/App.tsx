@@ -6,7 +6,6 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>San Francisco Pools Family Swim Schedule</h1>
-        <p>Weekly view of family swim hours across San Francisco public pools</p>
       </header>
       <main>
         <WeeklyCalendar />
