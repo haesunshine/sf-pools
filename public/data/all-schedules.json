@@ -1,0 +1,63 @@
+{
+  "lastUpdated": "2025-09-25T17:00:00.000Z",
+  "totalPools": 8,
+  "totalSessions": 24,
+  "pools": [
+    {
+      "poolName": "Balboa Pool",
+      "sessions": [
+        {
+          "pool": "Balboa",
+          "startTime": "09:00",
+          "endTime": "11:00",
+          "day": 5,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Balboa",
+          "startTime": "13:00",
+          "endTime": "15:00",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T17:00:00.000Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Rossi Pool",
+      "sessions": [
+        {
+          "pool": "Rossi",
+          "startTime": "10:00",
+          "endTime": "12:00",
+          "day": 5,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Rossi",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "day": 6,
+          "sessionType": "Open Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T17:00:00.000Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Hamilton Pool",
+      "sessions": [
+        {
+          "pool": "Hamilton",
+          "startTime": "11:00",
+          "endTime": "13:00",
+          "day": 5,
+          "sessionType": "Recreation Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T17:00:00.000Z",
+      "source": "SF Parks .pub file"
+    }
+  ]
+}
