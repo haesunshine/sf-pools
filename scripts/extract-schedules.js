@@ -114,7 +114,9 @@ If no family swim sessions are found, return empty sessions array.`
     const aiResponse = response.choices[0]?.message?.content || '{}';
 
     try {
-      const parsed = JSON.parse(aiResponse);
+      // Remove markdown code block formatting if present
+      const cleanedResponse = aiResponse.replace(/```json\s*|\s*```/g, '').trim();
+      const parsed = JSON.parse(cleanedResponse);
 
       // Convert sessions to our format
       const sessions = parsed.sessions?.map(session => ({
