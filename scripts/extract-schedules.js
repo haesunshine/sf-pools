@@ -3,40 +3,39 @@ import OpenAI from 'openai';
 import fs from 'fs/promises';
 import path from 'path';
 
-// Pool URLs to process
+// Pool URLs to process - Google Drive PDFs
 const POOL_URLS = [
   {
     name: 'Balboa Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26439/2025-Balboa-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'Rossi Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26440/2025-Rossi-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'Hamilton Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26441/2025-Hamilton-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
-  // Add more pools as needed
   {
     name: 'Garfield Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26442/2025-Garfield-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'Mission Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26443/2025-Mission-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'Coffman Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26444/2025-Coffman-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'King Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26445/2025-King-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   },
   {
     name: 'Sava Pool',
-    url: 'https://sfrecpark.org/DocumentCenter/View/26446/2025-Sava-Pool-Fall-Pool-Schedule'
+    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
   }
 ];
 
@@ -157,38 +156,28 @@ async function processPool(browser, pool) {
   try {
     console.log(`🌐 Processing ${pool.name}: ${pool.url}`);
 
-    // Set up download handling
-    const downloadPath = './temp-downloads';
-    await page.setViewportSize({ width: 1200, height: 800 });
+    // Set viewport for better PDF rendering
+    await page.setViewportSize({ width: 1200, height: 1600 });
 
-    // Try to navigate - if it's a direct file, this will fail gracefully
+    // Navigate to Google Drive PDF
+    await page.goto(pool.url, { waitUntil: 'networkidle', timeout: 30000 });
+
+    // Wait for PDF to load in Google Drive viewer
+    await page.waitForTimeout(8000);
+
+    // Look for the PDF content area in Google Drive
     try {
-      await page.goto(pool.url, { waitUntil: 'load', timeout: 10000 });
+      // Try to find the PDF viewer iframe or content
+      const pdfContent = await page.locator('iframe[src*="pdf"], [data-testid="page-rendered"], .ndfHFb-c4YZDc-Wrql6b').first();
 
-      // If we get here, it's likely not a direct download
-      await page.waitForTimeout(5000);
-
-      // Take screenshot
-      const screenshot = await page.screenshot({
-        fullPage: true,
-        type: 'png'
-      });
-    } catch (error) {
-      if (error.message.includes('Download is starting')) {
-        console.log(`📄 ${pool.name}: File triggers download - using placeholder data`);
-
-        // For now, return placeholder data - in production you'd handle the downloaded file
-        return {
-          poolName: pool.name,
-          sessions: [], // Empty sessions for now
-          lastUpdated: new Date().toISOString(),
-          source: 'SF Parks .pub file',
-          error: 'File download detected - manual processing required'
-        };
+      if (await pdfContent.isVisible()) {
+        console.log(`📄 ${pool.name}: PDF loaded in Google Drive viewer`);
       }
-      throw error;
+    } catch (e) {
+      console.log(`📄 ${pool.name}: PDF viewer detection failed, proceeding with screenshot`);
     }
 
+    // Take screenshot of the entire page showing the PDF
     const screenshot = await page.screenshot({
       fullPage: true,
       type: 'png'
