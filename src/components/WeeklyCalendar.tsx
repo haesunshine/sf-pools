@@ -8,13 +8,14 @@ const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
 // Pool colors for different facilities
 const POOL_COLORS = {
   'Balboa': '#FF6B6B',
-  'Rossi': '#4ECDC4',
-  'Hamilton': '#45B7D1',
-  'Garfield': '#96CEB4',
-  'Mission': '#FECA57',
-  'Sava': '#FF9FF3',
   'Coffman': '#A8E6CF',
-  'King': '#FFB347'
+  'Garfield': '#96CEB4',
+  'Hamilton': '#45B7D1',
+  'Mission': '#FECA57',
+  'MLK': '#FFB347',
+  'North Beach': '#9B59B6',
+  'Rossi': '#4ECDC4',
+  'Sava': '#FF9FF3'
 } as const
 
 type Pool = keyof typeof POOL_COLORS
@@ -164,7 +165,7 @@ const WeeklyCalendar: React.FC = () => {
           {Object.entries(POOL_COLORS).map(([pool, color]) => (
             <div key={pool} className="legend-item">
               <div className="legend-color" style={{ backgroundColor: color }}></div>
-              <span>{pool} Pool</span>
+              <span>{pool}</span>
             </div>
           ))}
         </div>
