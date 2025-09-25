@@ -6,36 +6,40 @@ import path from 'path';
 // Pool URLs to process - Google Drive PDFs
 const POOL_URLS = [
   {
-    name: 'Balboa Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Balboa',
+    url: 'https://drive.google.com/file/d/1F6ofavKm6fJG6yJnwJAJnaDqI3AW-OGG/view'
   },
   {
-    name: 'Rossi Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Coffman',
+    url: 'https://drive.google.com/file/d/1WdRNBlrTSlN9RYiQnkufgbpKS7DNLQV5/view'
   },
   {
-    name: 'Hamilton Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Garfield',
+    url: 'https://drive.google.com/file/d/1jwHSGy2LQpNI9NzQgzdKEff3eP4tUsW4/view'
   },
   {
-    name: 'Garfield Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Hamilton',
+    url: 'https://drive.google.com/file/d/1egPK2XoxOUo3qcJN7e3CPkOuH_7hcVZ5/view'
   },
   {
-    name: 'Mission Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Mission',
+    url: 'https://drive.google.com/file/d/1hMQSR-tzURRSeqk5ZUDrmSTHpVh61gdK/view'
+  },,
+  {
+    name: 'MLK',
+    url: 'https://drive.google.com/file/d/1LEOsgD5cYiEh3nRepIPeEFZ35g64xVq0/view'
   },
   {
-    name: 'Coffman Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'North Beach',
+    url: 'https://drive.google.com/file/d/170XXhZSC_2M6hW0c2e_YviW9kjeWVg6a/view'
   },
   {
-    name: 'King Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Rossi',
+    url: 'https://drive.google.com/file/d/1Waj_q5jrqWl3q6QJp656h1ZMxmtl4Dh3/view'
   },
   {
-    name: 'Sava Pool',
-    url: 'https://drive.google.com/file/d/YOUR_FILE_ID_HERE/view'
+    name: 'Sava',
+    url: 'https://drive.google.com/file/d/1Da1_NkTDszm6kwxLIdpcrTBPCBSZbHga/view'
   }
 ];
 
@@ -45,7 +49,7 @@ const openai = new OpenAI({
 });
 
 async function extractPoolName(text) {
-  const poolNameMatch = text.match(/(Balboa|Rossi|Hamilton|Garfield|Mission|Sava|Coffman|King|Recreation|Aquatic)/i);
+  const poolNameMatch = text.match(/(Balboa|Rossi|Hamilton|Garfield|Mission|North Beach|Sava|Coffman|MLK|Recreation|Aquatic)/i);
   if (poolNameMatch) {
     return poolNameMatch[1];
   }
@@ -61,11 +65,12 @@ async function analyzeScheduleImage(base64Image, poolName) {
       messages: [
         {
           role: 'system',
-          content: `You are an expert at reading San Francisco Parks pool schedules. Analyze this schedule screenshot and extract family swim hours.
+          content: `You are a parent who is carefully reading San Francisco Parks pool schedules. Analyze this schedule screenshot and extract family swim hours where you can take your kids swimming.
 
 Look for terms like:
 - "Family Swim"
 - "Open Swim"
+- "Rec Swim"
 - "Recreation Swim"
 - "Public Swim"
 - "General Swim"
