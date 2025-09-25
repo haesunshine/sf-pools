@@ -139,24 +139,6 @@ const WeeklyCalendar: React.FC = () => {
 
   return (
     <div className="weekly-calendar">
-      {/* Data Status */}
-      {metadata && (
-        <div className="data-status">
-          <div className="status-info">
-            <span className="status-badge">📊 {metadata.totalPools} pools • {metadata.totalSessions} sessions</span>
-            <span className="last-updated">
-              📅 Updated: {new Date(metadata.lastUpdated).toLocaleDateString()}
-            </span>
-          </div>
-          <button
-            className="refresh-btn"
-            onClick={() => DataLoader.clearCache()}
-            title="Clear cache to refresh data"
-          >
-            🔄
-          </button>
-        </div>
-      )}
 
       {/* Pool Legend */}
       <div className="pool-legend">
