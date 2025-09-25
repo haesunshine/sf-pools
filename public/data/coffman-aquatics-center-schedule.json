@@ -1,0 +1,35 @@
+{
+  "poolName": "Coffman Aquatics Center",
+  "sessions": [
+    {
+      "pool": {},
+      "startTime": "13:30",
+      "endTime": "15:00",
+      "day": 2,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "13:00",
+      "endTime": "14:30",
+      "day": 4,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "day": 5,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "14:00",
+      "endTime": "15:45",
+      "day": 6,
+      "sessionType": "Family Swim"
+    }
+  ],
+  "lastUpdated": "2025-09-25T22:20:07.450Z",
+  "source": "SF Parks .pub file"
+}

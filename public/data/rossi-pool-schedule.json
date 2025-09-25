@@ -1,0 +1,35 @@
+{
+  "poolName": "Rossi Pool",
+  "sessions": [
+    {
+      "pool": {},
+      "startTime": "13:30",
+      "endTime": "15:30",
+      "day": 2,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "18:30",
+      "endTime": "19:30",
+      "day": 4,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "12:30",
+      "endTime": "14:00",
+      "day": 6,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "14:30",
+      "endTime": "16:00",
+      "day": 6,
+      "sessionType": "Family Swim"
+    }
+  ],
+  "lastUpdated": "2025-09-25T22:22:26.574Z",
+  "source": "SF Parks .pub file"
+}

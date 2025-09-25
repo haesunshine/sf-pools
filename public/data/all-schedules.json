@@ -1,6 +1,252 @@
 {
-  "lastUpdated": "2025-09-25T19:00:00.000Z",
-  "totalPools": 0,
-  "totalSessions": 0,
-  "pools": []
+  "lastUpdated": "2025-09-25T22:22:44.445Z",
+  "totalPools": 9,
+  "totalSessions": 26,
+  "pools": [
+    {
+      "poolName": "Balboa Aquatics Center",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "18:00",
+          "endTime": "19:15",
+          "day": 0,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "day": 3,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "18:00",
+          "endTime": "19:15",
+          "day": 3,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "12:00",
+          "endTime": "15:00",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "day": 5,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:19:48.665Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Coffman Aquatics Center",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "13:30",
+          "endTime": "15:00",
+          "day": 2,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "13:00",
+          "endTime": "14:30",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "day": 5,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:00",
+          "endTime": "15:45",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:20:07.450Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Garfield Aquatic Center",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "15:30",
+          "endTime": "17:00",
+          "day": 0,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "17:45",
+          "endTime": "19:00",
+          "day": 2,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "15:30",
+          "endTime": "17:00",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "13:00",
+          "endTime": "14:30",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:20:28.733Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Hamilton Aquatic Center",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "13:00",
+          "endTime": "15:00",
+          "day": 0,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "13:00",
+          "endTime": "15:00",
+          "day": 5,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:20:46.336Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Mission",
+      "sessions": [],
+      "lastUpdated": "2025-09-25T22:21:18.370Z",
+      "source": "SF Parks .pub file",
+      "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://drive.google.com/file/d/1hMQSR-tzURRSeqk5ZUDrmSTHpVh61gdK/view\", waiting until \"networkidle\"\n"
+    },
+    {
+      "poolName": "Dr. Martin Luther King Jr. Swimming Pool",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "15:15",
+          "endTime": "16:30",
+          "day": 2,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "15:15",
+          "endTime": "16:30",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:21:34.897Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "North Beach",
+      "sessions": [],
+      "lastUpdated": "2025-09-25T22:22:06.928Z",
+      "source": "SF Parks .pub file",
+      "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://drive.google.com/file/d/170XXhZSC_2M6hW0c2e_YviW9kjeWVg6a/view\", waiting until \"networkidle\"\n"
+    },
+    {
+      "poolName": "Rossi Pool",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "day": 2,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "18:30",
+          "endTime": "19:30",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "12:30",
+          "endTime": "14:00",
+          "day": 6,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "14:30",
+          "endTime": "16:00",
+          "day": 6,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:22:26.574Z",
+      "source": "SF Parks .pub file"
+    },
+    {
+      "poolName": "Sava Aquatic Center",
+      "sessions": [
+        {
+          "pool": {},
+          "startTime": "11:00",
+          "endTime": "13:00",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": {},
+          "startTime": "13:30",
+          "endTime": "15:00",
+          "day": 5,
+          "sessionType": "Family Swim"
+        }
+      ],
+      "lastUpdated": "2025-09-25T22:22:42.435Z",
+      "source": "SF Parks .pub file"
+    }
+  ]
 }

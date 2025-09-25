@@ -1,0 +1,7 @@
+{
+  "poolName": "North Beach",
+  "sessions": [],
+  "lastUpdated": "2025-09-25T22:22:06.928Z",
+  "source": "SF Parks .pub file",
+  "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://drive.google.com/file/d/170XXhZSC_2M6hW0c2e_YviW9kjeWVg6a/view\", waiting until \"networkidle\"\n"
+}

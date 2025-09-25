@@ -1,0 +1,28 @@
+{
+  "poolName": "Dr. Martin Luther King Jr. Swimming Pool",
+  "sessions": [
+    {
+      "pool": {},
+      "startTime": "15:15",
+      "endTime": "16:30",
+      "day": 2,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "15:15",
+      "endTime": "16:30",
+      "day": 4,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": {},
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "day": 6,
+      "sessionType": "Family Swim"
+    }
+  ],
+  "lastUpdated": "2025-09-25T22:21:34.897Z",
+  "source": "SF Parks .pub file"
+}
