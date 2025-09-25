@@ -1,28 +1,27 @@
 {
   "poolName": "Hamilton Aquatic Center",
+  "operatingDays": [
+    1,
+    2,
+    4,
+    5
+  ],
   "sessions": [
     {
-      "pool": {},
+      "pool": "Hamilton",
       "startTime": "13:00",
-      "endTime": "15:00",
-      "day": 0,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": {},
-      "startTime": "13:00",
-      "endTime": "15:00",
-      "day": 5,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": {},
-      "startTime": "13:30",
       "endTime": "15:30",
-      "day": 6,
+      "day": 1,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Hamilton",
+      "startTime": "13:00",
+      "endTime": "15:30",
+      "day": 5,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:20:46.336Z",
+  "lastUpdated": "2025-09-25T22:32:19.738Z",
   "source": "SF Parks .pub file"
 }

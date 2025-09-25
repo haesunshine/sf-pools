@@ -1,21 +1,28 @@
 {
   "poolName": "Sava Aquatic Center",
+  "operatingDays": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
   "sessions": [
     {
-      "pool": {},
-      "startTime": "11:00",
-      "endTime": "13:00",
-      "day": 4,
+      "pool": "Sava",
+      "startTime": "12:00",
+      "endTime": "15:00",
+      "day": 3,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
-      "startTime": "13:30",
-      "endTime": "15:00",
+      "pool": "Sava",
+      "startTime": "11:30",
+      "endTime": "13:00",
       "day": 5,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:22:42.435Z",
+  "lastUpdated": "2025-09-25T22:33:51.075Z",
   "source": "SF Parks .pub file"
 }

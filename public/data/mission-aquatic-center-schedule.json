@@ -1,0 +1,57 @@
+{
+  "poolName": "Mission Aquatic Center",
+  "operatingDays": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sessions": [
+    {
+      "pool": "Mission",
+      "startTime": "09:30",
+      "endTime": "10:45",
+      "day": 1,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Mission",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "day": 1,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Mission",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "day": 2,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Mission",
+      "startTime": "09:30",
+      "endTime": "10:45",
+      "day": 3,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Mission",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "day": 3,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Mission",
+      "startTime": "13:00",
+      "endTime": "15:15",
+      "day": 5,
+      "sessionType": "Family Swim"
+    }
+  ],
+  "lastUpdated": "2025-09-25T22:32:38.949Z",
+  "source": "SF Parks .pub file"
+}

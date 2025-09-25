@@ -1,28 +1,43 @@
 {
   "poolName": "Dr. Martin Luther King Jr. Swimming Pool",
+  "operatingDays": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
   "sessions": [
     {
-      "pool": {},
+      "pool": "MLK",
       "startTime": "15:15",
-      "endTime": "16:30",
+      "endTime": "15:45",
+      "day": 1,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "MLK",
+      "startTime": "15:15",
+      "endTime": "15:45",
       "day": 2,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
+      "pool": "MLK",
       "startTime": "15:15",
-      "endTime": "16:30",
+      "endTime": "15:45",
       "day": 4,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
+      "pool": "MLK",
       "startTime": "14:00",
       "endTime": "15:30",
       "day": 6,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:21:34.897Z",
+  "lastUpdated": "2025-09-25T22:32:58.271Z",
   "source": "SF Parks .pub file"
 }

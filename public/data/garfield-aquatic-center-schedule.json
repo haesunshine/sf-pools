@@ -1,35 +1,50 @@
 {
   "poolName": "Garfield Aquatic Center",
+  "operatingDays": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
   "sessions": [
     {
-      "pool": {},
-      "startTime": "15:30",
-      "endTime": "17:00",
+      "pool": "Garfield",
+      "startTime": "15:00",
+      "endTime": "16:00",
       "day": 0,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
-      "startTime": "17:45",
-      "endTime": "19:00",
+      "pool": "Garfield",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "day": 1,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Garfield",
+      "startTime": "15:00",
+      "endTime": "16:00",
       "day": 2,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
-      "startTime": "15:30",
-      "endTime": "17:00",
-      "day": 4,
+      "pool": "Garfield",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "day": 3,
       "sessionType": "Family Swim"
     },
     {
-      "pool": {},
-      "startTime": "13:00",
-      "endTime": "14:30",
-      "day": 6,
+      "pool": "Garfield",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "day": 4,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:20:28.733Z",
+  "lastUpdated": "2025-09-25T22:32:04.182Z",
   "source": "SF Parks .pub file"
 }
