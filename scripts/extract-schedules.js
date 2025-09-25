@@ -76,12 +76,23 @@ Look for terms like:
 - "General Swim"
 - Any sessions open to families with children
 
+CRITICAL: First identify exactly which day columns are shown in the schedule grid header. Some pools may only operate Mon-Sat, others Tue-Sun, etc. Do NOT assign sessions to days that don't exist in the schedule.
+
+Step 1: Look at the schedule header and identify which days are actually shown as columns
+Step 2: Only extract sessions for the days that have columns in the grid
+Step 3: Map each column position to the correct day number
+
+Day mapping: Monday=0, Tuesday=1, Wednesday=2, Thursday=3, Friday=4, Saturday=5, Sunday=6
+
+Example: If schedule shows "Mon | Tue | Wed | Thu | Fri | Sat" (no Sunday column), then operatingDays should be [0,1,2,3,4,5] and NO sessions should have day=6
+
 Return ONLY a JSON object with this structure:
 {
   "poolName": "Name of the pool",
+  "operatingDays": [0, 1, 2, 3, 4] (array of day numbers this pool operates on),
   "sessions": [
     {
-      "day": 0-6 (0=Monday, 1=Tuesday, etc.),
+      "day": 0-6 (0=Monday, 1=Tuesday, etc. - must match actual day header),
       "startTime": "HH:MM" (24-hour format),
       "endTime": "HH:MM" (24-hour format),
       "sessionType": "Family Swim"
@@ -120,7 +131,7 @@ If no family swim sessions are found, return empty sessions array.`
 
       // Convert sessions to our format
       const sessions = parsed.sessions?.map(session => ({
-        pool: extractPoolName(parsed.poolName || poolName),
+        pool: poolName, // Use the original pool name passed to the function
         startTime: session.startTime,
         endTime: session.endTime,
         day: session.day,
@@ -129,6 +140,7 @@ If no family swim sessions are found, return empty sessions array.`
 
       return {
         poolName: parsed.poolName || poolName,
+        operatingDays: parsed.operatingDays || [0, 1, 2, 3, 4, 5, 6], // Default to all days if not specified
         sessions,
         lastUpdated: new Date().toISOString(),
         source: 'SF Parks .pub file'
@@ -138,6 +150,7 @@ If no family swim sessions are found, return empty sessions array.`
       console.error('❌ Error parsing Vision API response:', parseError);
       return {
         poolName: poolName,
+        operatingDays: [0, 1, 2, 3, 4, 5, 6], // Default to all days on error
         sessions: [],
         lastUpdated: new Date().toISOString(),
         source: 'SF Parks .pub file',
@@ -149,6 +162,7 @@ If no family swim sessions are found, return empty sessions array.`
     console.error('❌ Error calling OpenAI Vision API:', error);
     return {
       poolName: poolName,
+      operatingDays: [0, 1, 2, 3, 4, 5, 6], // Default to all days on error
       sessions: [],
       lastUpdated: new Date().toISOString(),
       source: 'SF Parks .pub file',
@@ -157,7 +171,7 @@ If no family swim sessions are found, return empty sessions array.`
   }
 }
 
-async function processPool(browser, pool) {
+async function processPool(browser, pool, retryCount = 0) {
   const page = await browser.newPage();
 
   try {
@@ -166,8 +180,18 @@ async function processPool(browser, pool) {
     // Set viewport for better PDF rendering
     await page.setViewportSize({ width: 1200, height: 1600 });
 
-    // Navigate to Google Drive PDF
-    await page.goto(pool.url, { waitUntil: 'networkidle', timeout: 30000 });
+    // Navigate to Google Drive PDF with increased timeout and retry logic
+    try {
+      await page.goto(pool.url, { waitUntil: 'networkidle', timeout: 60000 });
+    } catch (timeoutError) {
+      if (retryCount < 2) {
+        console.log(`⏱️ ${pool.name}: Timeout, retrying... (attempt ${retryCount + 1}/3)`);
+        await page.close();
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
+        return processPool(browser, pool, retryCount + 1);
+      }
+      throw timeoutError;
+    }
 
     // Wait for PDF to load in Google Drive viewer
     await page.waitForTimeout(8000);
@@ -198,12 +222,25 @@ async function processPool(browser, pool) {
 
     console.log(`✅ ${pool.name}: Found ${result.sessions.length} family swim sessions`);
 
+    // Log the actual times found for easy evaluation
+    if (result.sessions && result.sessions.length > 0) {
+      console.log(`📅 ${pool.name} Schedule:`);
+      result.sessions.forEach(session => {
+        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const dayName = days[session.day] || `Day ${session.day}`;
+        console.log(`   ${dayName}: ${session.startTime}-${session.endTime} (${session.sessionType})`);
+      });
+    } else {
+      console.log(`⚠️  ${pool.name}: No family swim sessions detected`);
+    }
+
     return result;
 
   } catch (error) {
     console.error(`❌ Error processing ${pool.name}:`, error);
     return {
       poolName: pool.name,
+      operatingDays: [0, 1, 2, 3, 4, 5, 6], // Default to all days on error
       sessions: [],
       lastUpdated: new Date().toISOString(),
       source: 'SF Parks .pub file',
@@ -259,6 +296,23 @@ async function main() {
 
     console.log('✅ Pool schedule extraction completed!');
     console.log(`📊 Processed ${results.length} pools with ${combinedData.totalSessions} total family swim sessions`);
+
+    // Summary of all extracted times for easy evaluation
+    console.log('\n🏊‍♀️ SUMMARY OF ALL EXTRACTED SWIM TIMES:');
+    console.log('=' .repeat(60));
+    results.forEach(poolData => {
+      console.log(`\n🏊 ${poolData.poolName.toUpperCase()}:`);
+      if (poolData.sessions && poolData.sessions.length > 0) {
+        poolData.sessions.forEach(session => {
+          const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+          const dayName = days[session.day] || `Day ${session.day}`;
+          console.log(`  • ${dayName}: ${session.startTime}-${session.endTime} (${session.sessionType})`);
+        });
+      } else {
+        console.log('  • No family swim sessions found');
+      }
+    });
+    console.log('\n' + '=' .repeat(60));
 
   } catch (error) {
     console.error('❌ Fatal error:', error);

@@ -5,17 +5,30 @@ import './WeeklyCalendar.css'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-// Pool colors for different facilities
+// Pool colors and shorthand names
 const POOL_COLORS = {
-  'Balboa': '#FF6B6B',
-  'Coffman': '#A8E6CF',
-  'Garfield': '#96CEB4',
-  'Hamilton': '#45B7D1',
+  'Balboa Aquatics Center': '#FF6B6B',
+  'Coffman Aquatics Center': '#A8E6CF',
+  'Garfield Aquatic Center': '#96CEB4',
+  'Hamilton Aquatic Center': '#45B7D1',
   'Mission': '#FECA57',
-  'MLK': '#FFB347',
+  'Dr. Martin Luther King Jr. Swimming Pool': '#FFB347',
   'North Beach': '#9B59B6',
-  'Rossi': '#4ECDC4',
-  'Sava': '#FF9FF3'
+  'Rossi Pool': '#4ECDC4',
+  'Sava Aquatic Center': '#FF9FF3'
+} as const
+
+// Shorthand names for display
+const POOL_SHORTNAMES = {
+  'Balboa Aquatics Center': 'Balboa',
+  'Coffman Aquatics Center': 'Coffman',
+  'Garfield Aquatic Center': 'Garfield',
+  'Hamilton Aquatic Center': 'Hamilton',
+  'Mission': 'Mission',
+  'Dr. Martin Luther King Jr. Swimming Pool': 'MLK',
+  'North Beach': 'N.Beach',
+  'Rossi Pool': 'Rossi',
+  'Sava Aquatic Center': 'Sava'
 } as const
 
 type Pool = keyof typeof POOL_COLORS
@@ -77,7 +90,7 @@ const WeeklyCalendar: React.FC = () => {
     // Wednesday - triple overlap
     { pool: 'Garfield', startTime: '08:00', endTime: '10:00', day: 2 },
     { pool: 'Balboa', startTime: '13:30', endTime: '15:30', day: 2 },
-    { pool: 'King', startTime: '14:00', endTime: '16:00', day: 2 }, // Overlaps with Balboa
+    { pool: 'MLK', startTime: '14:00', endTime: '16:00', day: 2 }, // Overlaps with Balboa
     { pool: 'Sava', startTime: '14:30', endTime: '16:30', day: 2 }, // Triple overlap
 
     // Thursday
@@ -85,7 +98,7 @@ const WeeklyCalendar: React.FC = () => {
     { pool: 'Coffman', startTime: '16:00', endTime: '18:00', day: 3 },
 
     // Friday
-    { pool: 'King', startTime: '09:30', endTime: '11:30', day: 4 },
+    { pool: 'MLK', startTime: '09:30', endTime: '11:30', day: 4 },
     { pool: 'Rossi', startTime: '14:30', endTime: '16:00', day: 4 },
 
     // Saturday - multiple overlaps
@@ -146,7 +159,7 @@ const WeeklyCalendar: React.FC = () => {
           {Object.entries(POOL_COLORS).map(([pool, color]) => (
             <div key={pool} className="legend-item">
               <div className="legend-color" style={{ backgroundColor: color }}></div>
-              <span>{pool}</span>
+              <span>{POOL_SHORTNAMES[pool as Pool]}</span>
             </div>
           ))}
         </div>
@@ -183,7 +196,7 @@ const WeeklyCalendar: React.FC = () => {
                       className="pool-session"
                       style={{ backgroundColor: POOL_COLORS[sessions[0].pool as Pool] || '#cccccc' }}
                     >
-                      {sessions[0].pool}
+                      {POOL_SHORTNAMES[sessions[0].pool as Pool] || sessions[0].pool}
                     </div>
                   ) : sessions.length > 1 ? (
                     // Multiple sessions - split the cell
@@ -199,7 +212,7 @@ const WeeklyCalendar: React.FC = () => {
                           }}
                           title={`${session.pool}: ${formatTime(session.startTime)} - ${formatTime(session.endTime)}`}
                         >
-                          {sessions.length <= 3 ? session.pool : session.pool.substring(0, 3)}
+                          {POOL_SHORTNAMES[session.pool as Pool] || session.pool}
                         </div>
                       ))}
                     </div>
