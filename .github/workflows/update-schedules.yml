@@ -1,0 +1,70 @@
+name: Update Pool Schedules
+
+on:
+  # Run quarterly on the 1st day of each quarter at 9 AM PST
+  schedule:
+    - cron: '0 17 1 1,4,7,10 *'  # 17 UTC = 9 AM PST
+
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Season to update (e.g., "Fall 2025")'
+        required: false
+        default: 'Current'
+
+jobs:
+  update-schedules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: |
+        npm ci
+        npx playwright install chromium
+
+    - name: Install automation dependencies
+      run: |
+        npm install playwright openai
+
+    - name: Run schedule extraction
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node scripts/extract-schedules.js
+
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --exit-code public/data/ || echo "changes=true" >> $GITHUB_OUTPUT
+
+    - name: Commit and push changes
+      if: steps.git-check.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add public/data/
+        git commit -m "🤖 Update pool schedules - $(date +'%Y-%m-%d')" || exit 0
+        git push
+
+    - name: Create summary
+      if: steps.git-check.outputs.changes == 'true'
+      run: |
+        echo "## 🏊‍♀️ Pool Schedules Updated!" >> $GITHUB_STEP_SUMMARY
+        echo "Successfully extracted family swim schedules from SF Parks .pub files" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Season:** ${{ github.event.inputs.season || 'Current' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Updated Files:" >> $GITHUB_STEP_SUMMARY
+        git diff --name-only HEAD~1 HEAD | grep 'public/data/' | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
