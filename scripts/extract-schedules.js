@@ -1,7 +1,7 @@
-const { chromium } = require('playwright');
-const OpenAI = require('openai');
-const fs = require('fs').promises;
-const path = require('path');
+import { chromium } from 'playwright';
+import OpenAI from 'openai';
+import fs from 'fs/promises';
+import path from 'path';
 
 // Pool URLs to process
 const POOL_URLS = [
@@ -248,6 +248,6 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
