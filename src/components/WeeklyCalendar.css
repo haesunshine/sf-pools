@@ -1,7 +1,8 @@
 .weekly-calendar {
   max-width: 1400px;
   width: 100%;
-  padding: 15px;
+  padding: 0;
+  margin: 0;
   font-family: 'Fredoka', cursive;
   position: relative;
   display: flex;
