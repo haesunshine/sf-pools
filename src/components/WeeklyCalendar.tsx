@@ -142,7 +142,6 @@ const WeeklyCalendar: React.FC = () => {
 
       {/* Pool Legend */}
       <div className="pool-legend">
-        <h3>Pool Legend</h3>
         <div className="legend-items">
           {Object.entries(POOL_COLORS).map(([pool, color]) => (
             <div key={pool} className="legend-item">
