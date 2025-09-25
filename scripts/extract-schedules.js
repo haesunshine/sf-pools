@@ -24,7 +24,7 @@ const POOL_URLS = [
   {
     name: 'Mission',
     url: 'https://drive.google.com/file/d/1hMQSR-tzURRSeqk5ZUDrmSTHpVh61gdK/view'
-  },,
+  },
   {
     name: 'MLK',
     url: 'https://drive.google.com/file/d/1LEOsgD5cYiEh3nRepIPeEFZ35g64xVq0/view'
