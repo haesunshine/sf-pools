@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2025-09-25T22:33:53.087Z",
+  "lastUpdated": "2025-10-01T17:23:19.539Z",
   "totalPools": 9,
-  "totalSessions": 31,
+  "totalSessions": 30,
   "pools": [
     {
       "poolName": "Balboa Aquatics Center",
@@ -16,9 +16,16 @@
       "sessions": [
         {
           "pool": "Balboa",
-          "startTime": "18:00",
-          "endTime": "19:00",
-          "day": 1,
+          "startTime": "11:00",
+          "endTime": "12:30",
+          "day": 2,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Balboa",
+          "startTime": "19:30",
+          "endTime": "21:00",
+          "day": 4,
           "sessionType": "Family Swim"
         },
         {
@@ -27,16 +34,9 @@
           "endTime": "15:30",
           "day": 5,
           "sessionType": "Family Swim"
-        },
-        {
-          "pool": "Balboa",
-          "startTime": "14:00",
-          "endTime": "15:30",
-          "day": 6,
-          "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:31:28.492Z",
+      "lastUpdated": "2025-10-01T17:19:58.164Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -51,20 +51,27 @@
       "sessions": [
         {
           "pool": "Coffman",
-          "startTime": "11:30",
+          "startTime": "13:00",
           "endTime": "15:00",
           "day": 1,
           "sessionType": "Family Swim"
         },
         {
           "pool": "Coffman",
-          "startTime": "12:45",
-          "endTime": "14:15",
+          "startTime": "13:00",
+          "endTime": "15:00",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Coffman",
+          "startTime": "13:00",
+          "endTime": "13:45",
           "day": 5,
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:31:45.224Z",
+      "lastUpdated": "2025-10-01T17:20:34.134Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -75,46 +82,33 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "sessions": [
         {
           "pool": "Garfield",
-          "startTime": "15:00",
-          "endTime": "16:00",
+          "startTime": "13:00",
+          "endTime": "15:00",
           "day": 0,
           "sessionType": "Family Swim"
         },
         {
           "pool": "Garfield",
           "startTime": "15:00",
-          "endTime": "16:00",
-          "day": 1,
+          "endTime": "16:30",
+          "day": 5,
           "sessionType": "Family Swim"
         },
         {
           "pool": "Garfield",
           "startTime": "15:00",
-          "endTime": "16:00",
-          "day": 2,
-          "sessionType": "Family Swim"
-        },
-        {
-          "pool": "Garfield",
-          "startTime": "15:00",
-          "endTime": "16:00",
-          "day": 3,
-          "sessionType": "Family Swim"
-        },
-        {
-          "pool": "Garfield",
-          "startTime": "15:00",
-          "endTime": "16:00",
-          "day": 4,
+          "endTime": "16:30",
+          "day": 6,
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:32:04.182Z",
+      "lastUpdated": "2025-10-01T17:20:54.588Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -122,26 +116,34 @@
       "operatingDays": [
         1,
         2,
+        3,
         4,
-        5
+        6
       ],
       "sessions": [
         {
           "pool": "Hamilton",
           "startTime": "13:00",
-          "endTime": "15:30",
+          "endTime": "15:00",
           "day": 1,
           "sessionType": "Family Swim"
         },
         {
           "pool": "Hamilton",
           "startTime": "13:00",
+          "endTime": "15:00",
+          "day": 3,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Hamilton",
+          "startTime": "13:00",
           "endTime": "15:30",
-          "day": 5,
+          "day": 6,
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:32:19.738Z",
+      "lastUpdated": "2025-10-01T17:21:20.289Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -171,13 +173,6 @@
         },
         {
           "pool": "Mission",
-          "startTime": "14:00",
-          "endTime": "15:00",
-          "day": 2,
-          "sessionType": "Family Swim"
-        },
-        {
-          "pool": "Mission",
           "startTime": "09:30",
           "endTime": "10:45",
           "day": 3,
@@ -185,20 +180,27 @@
         },
         {
           "pool": "Mission",
-          "startTime": "14:00",
-          "endTime": "15:00",
+          "startTime": "19:00",
+          "endTime": "20:00",
           "day": 3,
           "sessionType": "Family Swim"
         },
         {
           "pool": "Mission",
-          "startTime": "13:00",
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "day": 4,
+          "sessionType": "Family Swim"
+        },
+        {
+          "pool": "Mission",
+          "startTime": "14:00",
           "endTime": "15:15",
-          "day": 5,
+          "day": 6,
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:32:38.949Z",
+      "lastUpdated": "2025-10-01T17:21:49.351Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -215,21 +217,21 @@
         {
           "pool": "MLK",
           "startTime": "15:15",
-          "endTime": "15:45",
+          "endTime": "16:30",
           "day": 1,
           "sessionType": "Family Swim"
         },
         {
           "pool": "MLK",
           "startTime": "15:15",
-          "endTime": "15:45",
+          "endTime": "16:30",
           "day": 2,
           "sessionType": "Family Swim"
         },
         {
           "pool": "MLK",
           "startTime": "15:15",
-          "endTime": "15:45",
+          "endTime": "16:30",
           "day": 4,
           "sessionType": "Family Swim"
         },
@@ -241,13 +243,12 @@
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:32:58.271Z",
+      "lastUpdated": "2025-10-01T17:22:09.350Z",
       "source": "SF Parks .pub file"
     },
     {
       "poolName": "North Beach Aquatics Center",
       "operatingDays": [
-        1,
         2,
         3,
         4,
@@ -257,27 +258,27 @@
       "sessions": [
         {
           "pool": "North Beach",
-          "startTime": "17:30",
-          "endTime": "18:30",
-          "day": 1,
-          "sessionType": "Family Swim"
+          "startTime": "11:00",
+          "endTime": "12:00",
+          "day": 3,
+          "sessionType": "Rec/Family Swim"
         },
         {
           "pool": "North Beach",
           "startTime": "16:15",
-          "endTime": "17:00",
+          "endTime": "17:30",
           "day": 3,
-          "sessionType": "Family Swim"
+          "sessionType": "Rec/Family Swim"
         },
         {
           "pool": "North Beach",
-          "startTime": "16:00",
-          "endTime": "16:45",
-          "day": 5,
-          "sessionType": "Family Swim"
+          "startTime": "15:30",
+          "endTime": "17:00",
+          "day": 6,
+          "sessionType": "Rec/Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:33:16.583Z",
+      "lastUpdated": "2025-10-01T17:22:37.445Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -293,34 +294,27 @@
       "sessions": [
         {
           "pool": "Rossi",
-          "startTime": "12:30",
-          "endTime": "14:00",
+          "startTime": "13:30",
+          "endTime": "14:30",
           "day": 0,
-          "sessionType": "Family Swim"
+          "sessionType": "Rec/Family Swim"
         },
         {
           "pool": "Rossi",
-          "startTime": "14:30",
-          "endTime": "16:00",
-          "day": 0,
-          "sessionType": "Family Swim"
-        },
-        {
-          "pool": "Rossi",
-          "startTime": "15:00",
+          "startTime": "13:00",
           "endTime": "15:30",
           "day": 2,
-          "sessionType": "Family Swim"
+          "sessionType": "Rec/Family Swim"
         },
         {
           "pool": "Rossi",
           "startTime": "18:30",
           "endTime": "19:30",
           "day": 5,
-          "sessionType": "Family Swim"
+          "sessionType": "Rec/Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:33:35.288Z",
+      "lastUpdated": "2025-10-01T17:23:00.018Z",
       "source": "SF Parks .pub file"
     },
     {
@@ -335,8 +329,8 @@
       "sessions": [
         {
           "pool": "Sava",
-          "startTime": "12:00",
-          "endTime": "15:00",
+          "startTime": "11:00",
+          "endTime": "12:00",
           "day": 3,
           "sessionType": "Family Swim"
         },
@@ -348,7 +342,7 @@
           "sessionType": "Family Swim"
         }
       ],
-      "lastUpdated": "2025-09-25T22:33:51.075Z",
+      "lastUpdated": "2025-10-01T17:23:17.527Z",
       "source": "SF Parks .pub file"
     }
   ]

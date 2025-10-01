@@ -1,7 +1,6 @@
 {
   "poolName": "North Beach Aquatics Center",
   "operatingDays": [
-    1,
     2,
     3,
     4,
@@ -11,26 +10,26 @@
   "sessions": [
     {
       "pool": "North Beach",
-      "startTime": "17:30",
-      "endTime": "18:30",
-      "day": 1,
-      "sessionType": "Family Swim"
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "day": 3,
+      "sessionType": "Rec/Family Swim"
     },
     {
       "pool": "North Beach",
       "startTime": "16:15",
-      "endTime": "17:00",
+      "endTime": "17:30",
       "day": 3,
-      "sessionType": "Family Swim"
+      "sessionType": "Rec/Family Swim"
     },
     {
       "pool": "North Beach",
-      "startTime": "16:00",
-      "endTime": "16:45",
-      "day": 5,
-      "sessionType": "Family Swim"
+      "startTime": "15:30",
+      "endTime": "17:00",
+      "day": 6,
+      "sessionType": "Rec/Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:33:16.583Z",
+  "lastUpdated": "2025-10-01T17:22:37.445Z",
   "source": "SF Parks .pub file"
 }

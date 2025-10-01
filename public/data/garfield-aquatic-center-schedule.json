@@ -6,45 +6,32 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
   "sessions": [
     {
       "pool": "Garfield",
-      "startTime": "15:00",
-      "endTime": "16:00",
+      "startTime": "13:00",
+      "endTime": "15:00",
       "day": 0,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Garfield",
       "startTime": "15:00",
-      "endTime": "16:00",
-      "day": 1,
+      "endTime": "16:30",
+      "day": 5,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Garfield",
       "startTime": "15:00",
-      "endTime": "16:00",
-      "day": 2,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": "Garfield",
-      "startTime": "15:00",
-      "endTime": "16:00",
-      "day": 3,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": "Garfield",
-      "startTime": "15:00",
-      "endTime": "16:00",
-      "day": 4,
+      "endTime": "16:30",
+      "day": 6,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:32:04.182Z",
+  "lastUpdated": "2025-10-01T17:20:54.588Z",
   "source": "SF Parks .pub file"
 }

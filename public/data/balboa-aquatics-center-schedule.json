@@ -11,9 +11,16 @@
   "sessions": [
     {
       "pool": "Balboa",
-      "startTime": "18:00",
-      "endTime": "19:00",
-      "day": 1,
+      "startTime": "11:00",
+      "endTime": "12:30",
+      "day": 2,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Balboa",
+      "startTime": "19:30",
+      "endTime": "21:00",
+      "day": 4,
       "sessionType": "Family Swim"
     },
     {
@@ -22,15 +29,8 @@
       "endTime": "15:30",
       "day": 5,
       "sessionType": "Family Swim"
-    },
-    {
-      "pool": "Balboa",
-      "startTime": "14:00",
-      "endTime": "15:30",
-      "day": 6,
-      "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-09-25T22:31:28.492Z",
+  "lastUpdated": "2025-10-01T17:19:58.164Z",
   "source": "SF Parks .pub file"
 }
