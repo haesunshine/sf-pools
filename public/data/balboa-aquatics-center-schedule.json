@@ -1,7 +1,6 @@
 {
   "poolName": "Balboa Aquatics Center",
   "operatingDays": [
-    1,
     2,
     3,
     4,
@@ -11,26 +10,19 @@
   "sessions": [
     {
       "pool": "Balboa",
-      "startTime": "11:00",
-      "endTime": "12:30",
-      "day": 2,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": "Balboa",
-      "startTime": "19:30",
-      "endTime": "21:00",
+      "startTime": "14:30",
+      "endTime": "16:00",
       "day": 4,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Balboa",
-      "startTime": "14:00",
-      "endTime": "15:30",
+      "startTime": "13:00",
+      "endTime": "14:30",
       "day": 5,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-10-01T17:19:58.164Z",
+  "lastUpdated": "2026-01-01T17:22:32.133Z",
   "source": "SF Parks .pub file"
 }

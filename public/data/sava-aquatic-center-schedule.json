@@ -5,24 +5,25 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
   "sessions": [
     {
       "pool": "Sava",
-      "startTime": "11:00",
-      "endTime": "12:00",
-      "day": 3,
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "day": 2,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Sava",
-      "startTime": "11:30",
-      "endTime": "13:00",
-      "day": 5,
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "day": 4,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-10-01T17:23:17.527Z",
+  "lastUpdated": "2026-01-01T17:24:56.213Z",
   "source": "SF Parks .pub file"
 }

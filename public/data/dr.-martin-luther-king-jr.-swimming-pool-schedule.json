@@ -5,39 +5,31 @@
     2,
     3,
     4,
-    5,
-    6
+    5
   ],
   "sessions": [
     {
       "pool": "MLK",
-      "startTime": "15:15",
-      "endTime": "16:30",
+      "startTime": "15:45",
+      "endTime": "16:45",
       "day": 1,
       "sessionType": "Family Swim"
     },
     {
       "pool": "MLK",
-      "startTime": "15:15",
-      "endTime": "16:30",
-      "day": 2,
-      "sessionType": "Family Swim"
-    },
-    {
-      "pool": "MLK",
-      "startTime": "15:15",
-      "endTime": "16:30",
-      "day": 4,
+      "startTime": "15:45",
+      "endTime": "16:45",
+      "day": 3,
       "sessionType": "Family Swim"
     },
     {
       "pool": "MLK",
       "startTime": "14:00",
       "endTime": "15:30",
-      "day": 6,
+      "day": 5,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-10-01T17:22:09.350Z",
+  "lastUpdated": "2026-01-01T17:24:05.692Z",
   "source": "SF Parks .pub file"
 }

@@ -6,31 +6,38 @@
     2,
     3,
     4,
-    5
+    6
   ],
   "sessions": [
     {
       "pool": "Rossi",
-      "startTime": "13:30",
-      "endTime": "14:30",
+      "startTime": "12:30",
+      "endTime": "2:00",
       "day": 0,
-      "sessionType": "Rec/Family Swim"
+      "sessionType": "Family Swim"
     },
     {
       "pool": "Rossi",
-      "startTime": "13:00",
-      "endTime": "15:30",
+      "startTime": "2:00",
+      "endTime": "3:30",
+      "day": 0,
+      "sessionType": "Family Swim"
+    },
+    {
+      "pool": "Rossi",
+      "startTime": "6:00",
+      "endTime": "7:30",
       "day": 2,
-      "sessionType": "Rec/Family Swim"
+      "sessionType": "Family Swim"
     },
     {
       "pool": "Rossi",
-      "startTime": "18:30",
-      "endTime": "19:30",
-      "day": 5,
-      "sessionType": "Rec/Family Swim"
+      "startTime": "3:00",
+      "endTime": "4:00",
+      "day": 4,
+      "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-10-01T17:23:00.018Z",
+  "lastUpdated": "2026-01-01T17:24:40.213Z",
   "source": "SF Parks .pub file"
 }

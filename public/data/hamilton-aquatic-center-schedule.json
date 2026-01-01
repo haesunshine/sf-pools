@@ -5,31 +5,32 @@
     2,
     3,
     4,
+    5,
     6
   ],
   "sessions": [
     {
       "pool": "Hamilton",
-      "startTime": "13:00",
-      "endTime": "15:00",
-      "day": 1,
+      "startTime": "11:00",
+      "endTime": "13:00",
+      "day": 2,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Hamilton",
       "startTime": "13:00",
-      "endTime": "15:00",
-      "day": 3,
+      "endTime": "14:30",
+      "day": 5,
       "sessionType": "Family Swim"
     },
     {
       "pool": "Hamilton",
-      "startTime": "13:00",
+      "startTime": "13:30",
       "endTime": "15:30",
       "day": 6,
       "sessionType": "Family Swim"
     }
   ],
-  "lastUpdated": "2025-10-01T17:21:20.289Z",
+  "lastUpdated": "2026-01-01T17:23:25.944Z",
   "source": "SF Parks .pub file"
 }
